@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const helpers = require('../helpers');
 
 // Do work here
 router.get('/', (req, res) => {
@@ -11,8 +12,8 @@ router.get('/', (req, res) => {
   // res.json(carlos);
 
   res.render('hello', {
-    name: 'Carlos',
-    dog: req.query.dog
+    title: 'I Love Food',
+    saleEnd: helpers.moment().endOf('day').fromNow()
   });
 });
 
